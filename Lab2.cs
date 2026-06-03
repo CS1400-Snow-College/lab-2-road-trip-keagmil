@@ -27,7 +27,11 @@ Console.Write($"Currency: {currency, 40}\n");
 Console.Write($"Distance (miles): {miles, 40}\n");
 Console.Write($"Average Speed (MPH): {speed, 40}\n");
 double hours = miles / speed;
-Console.Write($"Time Driving: {hours:#.##, 40} hours\n");
+int wholeHours = (int)hours;
+double minutes = (hours - wholeHours) * 60;
+string hoursF = $"{hours:F2}";
+string minutesF = $"{minutes:F0}";
+Console.Write($"Time Driving: {hoursF} hours {minutesF} minutes\n");
 
 Console.Write($"Vehicle Miles per Gallon: {mpg, 40}\n");
 double fuelNeededRoundTrip = (miles*2)/mpg;
