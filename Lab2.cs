@@ -21,33 +21,33 @@ Console.Write("What is the fuel price per gallon ($)?");
 double fuelPrice = Convert.ToDouble(Console.ReadLine());
 //Above includes all variables from the user already converted to usable data types.
 
-Console.Write($"Driver: {driver, 40}");
+Console.Write($"Driver: {driver, 40}\n");
 Console.Write($"Currency: {currency, 40}\n");
 
-Console.Write($"Distance (miles): {miles, 40}");
-Console.Write($"Average Speed (MPH): {speed, 40}");
+Console.Write($"Distance (miles): {miles, 40}\n");
+Console.Write($"Average Speed (MPH): {speed, 40}\n");
 double hours = miles / speed;
 Console.Write($"Time Driving: {hours:#.##, 40} hours\n");
 
-Console.Write($" Vechile Miles per Gallon: {mpg, 40}");
+Console.Write($"Vehicle Miles per Gallon: {mpg, 40}\n");
 double fuelNeededRoundTrip = (miles*2)/mpg;
-Console.Write($"Fuel Needed (Round trip): {fuelNeededRoundTrip, 40} gallons");
+Console.Write($"Fuel Needed (Round trip): {fuelNeededRoundTrip:#.##, 40} gallons\n");
 double tankRange = gallons * mpg;
-Console.Write($"Range per tank: {tankRange, 40} miles");
+Console.Write($"Range per tank: {tankRange, 40} miles\n");
 int fuelStops = (int)Math.Ceiling(fuelNeededRoundTrip / gallons); //Rounds up! Can't have half a fuel stop.
 Console.Write($"Estimated Fuel Stops: {fuelStops, 40}\n");
 
-Console.Write($"Gas Price per Gallon: {fuelPrice, 40}");
+Console.Write($"Gas Price per Gallon: {currency}{fuelPrice:#.##, 40}\n");
 double fuelCostTotal = Math.Ceiling(((miles*2)/mpg)*fuelPrice);
-Console.Write($"Estimated Fuel Cost: {fuelCostTotal, 40} {currency}\n");
+Console.Write($"Estimated Fuel Cost: {currency}{fuelCostTotal, 40} \n");
 //fix
-Console.Write($"Riders (split): {riders, 40}");
+Console.Write($"Riders (split): {riders, 40}\n");
 double costPerPersonTotal = fuelCostTotal / (riders + 1);
 string Snacks = "(+ snacks)";
-Console.Write($"Cost per person: {costPerPersonTotal, 40} {currency} {Snacks}");
+Console.Write($"Cost per person: {costPerPersonTotal:#.00, 40} {currency} {Snacks}\n");
 double costPerMileTotal = fuelCostTotal / (miles*2);
-Console.Write($"Cost per mile: {costPerMileTotal, 40} {currency}");
+Console.Write($"Cost per mile: {costPerMileTotal:#.00, 40} {currency}\n");
 double costPerHourTotal = fuelCostTotal / (miles/speed);
-Console.Write($"Cost per driving hour: {costPerHourTotal, 40} {currency}\n");
+Console.Write($"Cost per driving hour: {costPerHourTotal:#.00, 40} {currency}\n");
 
 
