@@ -54,7 +54,7 @@ Console.Write($"Riders (split): {riders,40}\n");
 double costPerPersonTotal = fuelCostTotal / (riders + 1);
 string Snacks = "(+ snacks)";
 string costPerPersonTotalF = $"{costPerPersonTotal:F2}";
-Console.Write($"Cost per person: {currency,49}{costPerPersonTotalF} {Snacks,1}\n");
+Console.Write($"Cost per person: {currency,39}{costPerPersonTotalF} {Snacks,1}\n");
 double costPerMileTotal = fuelCostTotal / (miles*2);
 string costPerMileTotalF = $"{costPerMileTotal:F2}";
 Console.Write($"Cost per mile: {currency,41}{costPerMileTotalF}\n");
